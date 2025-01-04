@@ -125,6 +125,8 @@ class TaskManager implements TaskOperations {
         } else {
             tasks.forEach(System.out::println);
         }
+        System.out.println("\nPress Enter to return to the menu...");
+        scanner.nextLine();  // This will consume the Enter key press
     }
 
     @Override
