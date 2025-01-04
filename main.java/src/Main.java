@@ -108,7 +108,7 @@ class TaskManager implements TaskOperations {
         String isDetailed = scanner.nextLine();
 
         if (isDetailed.equalsIgnoreCase("yes")) {
-            System.out.print("Enter Due Date: ");
+            System.out.print("Enter Due Date (dd/mm/yy): ");
             String dueDate = scanner.nextLine();
             tasks.add(new DetailedTask(id, description, priority, status, dueDate));
         } else {
@@ -132,21 +132,21 @@ class TaskManager implements TaskOperations {
         for (Task task : tasks) {
             if (task.getId() == id) {
                 System.out.print("Enter new Description: ");
-                scanner.nextLine(); // Consume newline
+//                scanner.nextLine(); // Consume newline
                 String description = scanner.nextLine();
                 task.setDescription(description);
 
-                System.out.print("Enter new Priority: ");
+                System.out.print("Enter new Priority (0.0 - 5.0): ");
                 double priority = scanner.nextDouble();
                 scanner.nextLine();
                 task.setPriority(priority);
 
-                System.out.print("Enter new Status: ");
+                System.out.print("Enter new Status (incomplete/completed): ");
                 String status = scanner.nextLine();
                 task.setStatus(status);
 
                 if (task instanceof DetailedTask) {
-                    System.out.print("Enter new Due Date: ");
+                    System.out.print("Enter new Due Date (dd/mm/yy): ");
                     String dueDate = scanner.nextLine();
                     ((DetailedTask) task).setDueDate(dueDate);
                 }
